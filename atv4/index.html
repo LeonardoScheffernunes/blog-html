@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog de Viagens</title>
+    <style>
+        :root {
+            --bg: #f4f1ea;
+            --surface: #ffffff;
+            --surface-alt: #fcf8f1;
+            --text: #2f2a24;
+            --muted: #6e6257;
+            --accent: #0f766e;
+            --accent-dark: #115e59;
+            --shadow: 0 20px 45px rgba(47, 42, 36, 0.12);
+            --radius-lg: 24px;
+            --radius-md: 18px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 24px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top, rgba(15, 118, 110, 0.22), transparent 32%),
+                linear-gradient(180deg, #f6efe3 0%, var(--bg) 100%);
+            display: grid;
+            grid-template-columns: minmax(0, 2.2fr) minmax(260px, 0.9fr);
+            grid-template-areas:
+                "header header"
+                "main aside"
+                "footer footer";
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header,
+        main,
+        aside,
+        footer {
+            background-color: var(--surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        header {
+            grid-area: header;
+            padding: 32px;
+            background:
+                linear-gradient(135deg, rgba(15, 118, 110, 0.96), rgba(8, 145, 178, 0.92)),
+                #0f766e;
+            color: #ffffff;
+        }
+
+        header h1 {
+            margin-bottom: 18px;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 999px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.18);
+            transform: translateY(-2px);
+        }
+
+        main {
+            grid-area: main;
+            padding: 32px;
+        }
+
+        article {
+            display: grid;
+            gap: 22px;
+        }
+
+        article h2 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+        }
+
+        .post-meta {
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        article p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        figure {
+            display: grid;
+            gap: 12px;
+            padding: 18px;
+            border-radius: var(--radius-md);
+            background-color: var(--surface-alt);
+        }
+
+        figure img {
+            width: 100%;
+            display: block;
+            border-radius: 16px;
+            object-fit: cover;
+        }
+
+        figcaption {
+            color: var(--muted);
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        aside {
+            grid-area: aside;
+            align-self: start;
+            padding: 28px;
+            background-color: #fffaf2;
+        }
+
+        aside h3 {
+            margin-bottom: 18px;
+            font-size: 1.35rem;
+        }
+
+        aside ul {
+            list-style: none;
+            display: grid;
+            gap: 14px;
+        }
+
+        aside a {
+            display: block;
+            padding: 14px 16px;
+            border-radius: 14px;
+            background-color: rgba(15, 118, 110, 0.08);
+            color: var(--accent-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        aside a:hover {
+            background-color: rgba(15, 118, 110, 0.16);
+            transform: translateX(4px);
+        }
+
+        footer {
+            grid-area: footer;
+            padding: 22px 32px;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px;
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "aside"
+                    "footer";
+            }
+
+            header,
+            main,
+            aside,
+            footer {
+                border-radius: 20px;
+            }
+
+            header,
+            main,
+            aside {
+                padding: 24px;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Meu Blog de Viagens</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h2>Descobrindo as Praias do Nordeste</h2>
+
+            <p class="post-meta">
+                Publicado em
+                <time datetime="2025-08-15">15 de agosto de 2025</time>
+            </p>
+
+            <p>
+                O Nordeste do Brasil possui algumas das praias mais bonitas do mundo.
+                Com aguas cristalinas, areia branca e um clima tropical durante quase
+                todo o ano, e um destino perfeito para quem busca descanso e paisagens incriveis.
+            </p>
+
+            <p>
+                Durante minha viagem, visitei diversas praias paradisiacas e pude conhecer
+                a cultura local, a culinaria tipica e a hospitalidade das pessoas da regiao.
+                Cada praia possui sua propria beleza e charme especial.
+            </p>
+
+            <figure>
+                <img src="praia.jpg" alt="Praia paradisiaca no nordeste brasileiro">
+                <figcaption>Uma das belas praias encontradas no Nordeste do Brasil.</figcaption>
+            </figure>
+        </article>
+    </main>
+
+    <aside>
+        <h3>Posts Relacionados</h3>
+
+        <ul>
+            <li><a href="#">Explorando as Montanhas do Sul</a></li>
+            <li><a href="#">Guia de Viagem para o Rio de Janeiro</a></li>
+            <li><a href="#">Dicas para Viajar Gastando Pouco</a></li>
+        </ul>
+    </aside>
+
+    <footer>
+        <p>&copy; 2024 - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
