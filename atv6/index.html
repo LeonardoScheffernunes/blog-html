@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 6 - To-Do List de Estudos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="todo-app">
+        <header class="hero">
+            <p class="eyebrow">Atividade 6</p>
+            <h1>To-Do List de Estudos</h1>
+            <p class="subtitle">Adicione tarefas, organize seus estudos e remova itens com um clique.</p>
+        </header>
+
+        <section class="todo-card" aria-labelledby="lista-titulo">
+            <h2 id="lista-titulo">Minha lista</h2>
+
+            <div class="input-row">
+                <label class="sr-only" for="taskInput">Digite uma tarefa</label>
+                <input
+                    id="taskInput"
+                    type="text"
+                    placeholder="Ex.: revisar JavaScript"
+                    autocomplete="off"
+                >
+                <button id="addTaskButton" type="button">Adicionar</button>
+            </div>
+
+            <p class="hint">Clique em uma tarefa da lista para remove-la.</p>
+
+            <ul id="taskList" class="task-list" aria-live="polite"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
