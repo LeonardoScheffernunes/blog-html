@@ -1,0 +1,177 @@
+.todo-app {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+.hero,
+.todo-card {
+  background-color: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: 32px;
+  background:
+    linear-gradient(135deg, rgba(201, 111, 50, 0.98), rgba(240, 157, 80, 0.95)),
+    var(--accent);
+  color: #fff9f4;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #fff9f4;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 42ch;
+}
+
+.todo-card {
+  padding: 28px;
+}
+
+.todo-card h2 {
+  margin: 0 0 20px;
+  font-size: 1.55rem;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+.input-row input,
+.input-row button,
+.task-list button {
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  font-size: 1rem;
+}
+
+.input-row input {
+  min-width: 0;
+  padding: 14px 16px;
+  color: var(--text);
+  background-color: #fffaf3;
+}
+
+.input-row input:focus {
+  outline: 3px solid rgba(201, 111, 50, 0.18);
+  border-color: var(--accent);
+}
+
+.input-row button,
+.task-list button {
+  border: none;
+  font-weight: 700;
+  color: #fffaf5;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input-row button {
+  padding: 14px 22px;
+}
+
+.task-list button {
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+}
+
+.input-row button:hover,
+.task-list button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px rgba(159, 82, 32, 0.24);
+}
+
+.hint {
+  margin: 16px 0 0;
+  color: var(--muted);
+}
+
+.task-list {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.task-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px 14px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid #ecd8c2;
+  background: linear-gradient(180deg, #fffaf3 0%, #fff3e4 100%);
+  font-weight: 600;
+  line-height: 1.5;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.task-list li:hover {
+  transform: translateX(4px);
+  border-color: rgba(201, 111, 50, 0.55);
+  box-shadow: 0 12px 22px rgba(99, 69, 42, 0.12);
+}
+
+.task-list span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .hero,
+  .todo-card {
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .input-row,
+  .task-list li {
+    grid-template-columns: 1fr;
+  }
+
+  .input-row button,
+  .task-list button {
+    width: 100%;
+  }
+}
